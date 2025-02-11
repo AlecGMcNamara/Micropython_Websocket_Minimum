@@ -1,4 +1,4 @@
-# Write Up  
-https://www.donskytech.com/using-websocket-in-micropython-a-practical-example/  
-  
-![Featured Image - Using WebSocket in MicroPython - A Practical Example](https://user-images.githubusercontent.com/69466026/220387186-31b15ce8-5893-47ef-b01f-f56d896247f7.jpg)
+Microdot Micropython Websocket project, transfers 10 Json variables between Browser and IOT device
+Tested on Roi Pico W and ESP32 WROOM 32
+
+Code cut to bare minimum for ease of undersanding
