@@ -19,7 +19,7 @@ function onOpen(event) {
 }
 function onClose(event) {
   console.log("Closing connection to server..");
-  setTimeout(initializeSocket, 100);
+  setTimeout(initializeSocket, 250);
 }
 
 function onMessage(event) {

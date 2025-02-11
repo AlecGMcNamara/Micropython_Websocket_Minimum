@@ -33,7 +33,8 @@ async def wsMessage(request, ws):
     jsonReceive = ujson.loads(await ws.receive())
     myCounter = jsonReceive["V3"]  #save received variables
     myCounter +=1
-   
+    ws.close()
+       
 # Static CSS/JSS
 @app.route("/static/<path:path>")
 def static(request, path):
