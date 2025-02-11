@@ -18,7 +18,7 @@ async def index(request):
 async def wsMessage(request, ws):
     global myCounter
     jsonSend={
-            "V1":"Video",
+            "V1":"Video", #define varibles to send
             "V2":False,
             "V3":myCounter,
             "V4":"",
@@ -31,7 +31,7 @@ async def wsMessage(request, ws):
             }
     await ws.send(ujson.dumps(jsonSend))
     jsonReceive = ujson.loads(await ws.receive())
-    myCounter = jsonReceive["V3"]  #save to variable
+    myCounter = jsonReceive["V3"]  #save received variables
     myCounter +=1
    
 # Static CSS/JSS
