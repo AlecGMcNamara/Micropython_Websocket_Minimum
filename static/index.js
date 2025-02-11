@@ -57,7 +57,8 @@ function onMessage(event) {
                     "V10": ""
                     };
 
-    websocket.send(JSON.stringify(jsonSend));   
+    websocket.send(JSON.stringify(jsonSend));
+    websocket.close();   
 }
 
 function sendMessage(message) {

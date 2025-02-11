@@ -2,11 +2,14 @@ from microdot_asyncio import Microdot, Response, send_file
 from microdot_utemplate import render_template
 from microdot_asyncio_websocket import with_websocket
 import ujson
+import uasyncio
+from machine import Pin
 
 # Initialize MicroDot
 app = Microdot()
 Response.default_content_type = 'text/html'
 myCounter=0
+pin = Pin("LED", Pin.OUT)
 
 # root route
 @app.route('/')
@@ -46,11 +49,10 @@ def shutdown(request):
     request.app.shutdown()
     return 'The server is shutting down...'
 
+async def mainloop():
+    while True:
+        pin.toggle()
+        await uasyncio.sleep(0.5)
+        
+uasyncio.create_task(mainloop())
 app.run()
-
-while True:
-        #
-        # put main loop code here
-        #
-    pass 
-    
